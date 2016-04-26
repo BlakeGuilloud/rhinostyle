@@ -84,7 +84,7 @@
   <h3 class="site-subheadline">Brand Colors</h3>
   <div class="site-swatch">
     <div class="site-swatch__sample u-bg-primary"></div>
-    <div class="site-swatch__text"><strong>Primary</strong> <span class="u-text-muted">#4078bE</span></div>
+    <div class="site-swatch__text"><strong>Primary</strong> <span class="u-text-muted">#0081C6</span></div>
   </div>
   <div class="site-swatch">
     <div class="site-swatch__sample u-bg-secondary"></div>
@@ -206,6 +206,21 @@
           $(this).find('.progress-bar__slider').css('transform','translateX('+position+'%)'); 
           $(this).find('.progress-bar__slider').css('-webkit-transform','translateX('+position+'%)');
         });
+
+
+        // animation testing
+
+        var totalFrames = 51,
+            speed = 3,
+            rhinoEase = new SteppedEase(totalFrames),
+            finalPosition = '100% 0px';
+
+        var rhinoTL = new TimelineMax()
+        rhinoTL.to('.rhino-animation', speed, {
+            backgroundPosition: finalPosition,
+            ease: rhinoEase,
+            repeat: -1
+        })
 
 
       });

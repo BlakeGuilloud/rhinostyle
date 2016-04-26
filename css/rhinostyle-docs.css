@@ -306,7 +306,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #4078BE;
+  color: #0081c6;
   /*.no-touch &:hover,
   .no-touch &:focus {
     color: @link-hover-color;
@@ -471,11 +471,11 @@ a.u-bg-info:focus {
   background-color: #ceecf5;
 }
 .u-bg-primary {
-  background-color: #4078BE;
+  background-color: #0081c6;
 }
 a.u-bg-primary:hover,
 a.u-bg-primary:focus {
-  background-color: #336098;
+  background-color: #006093;
 }
 .u-bg-secondary {
   background-color: #41D6C3;
@@ -532,15 +532,15 @@ a.u-text-info:hover,
   color: #1f7e9a;
 }
 .u-text-primary {
-  color: #4078BE;
+  color: #0081c6;
 }
 a.u-text-primary,
 .btn--link.u-text-primary {
-  color: #4078BE;
+  color: #0081c6;
 }
 a.u-text-primary:hover,
 .btn--link.u-text-primary:hover {
-  color: #336098;
+  color: #006093;
 }
 .u-text-secondary {
   color: #41D6C3;
@@ -788,6 +788,21 @@ a.u-text-warning:hover,
 @tooltip-color:               @white;
 @tooltip-opacity:             .9;
 @tooltip-max-width:           200px;*/
+.rhino-animation {
+  background-color: #0081c6;
+  background-image: url("../animation/sprite.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  max-width: 760px;
+  position: relative;
+}
+.rhino-animation::before {
+  content: "";
+  display: block;
+  padding-top: 115.79%;
+}
 .btn {
   background-image: none;
   border: 1px solid transparent;
@@ -959,22 +974,22 @@ fieldset[disabled] .btn--default-outline.active {
   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
 }*/
 .btn--primary {
-  background-color: #4078BE;
-  border-color: #4078BE;
+  background-color: #0081c6;
+  border-color: #0081c6;
   color: #ffffff;
 }
 .btn--primary:focus {
-  background-color: #336098;
+  background-color: #006093;
   color: #ffffff;
 }
 .btn--primary:hover {
-  background-color: #336098;
+  background-color: #006093;
   color: #ffffff;
 }
 .btn--primary:active,
 .btn--primary.active,
 .open > .dropdown__toggle.btn--primary {
-  background-color: #336098;
+  background-color: #006093;
   color: #ffffff;
 }
 .btn--primary:active:hover,
@@ -983,7 +998,7 @@ fieldset[disabled] .btn--default-outline.active {
 .btn--primary:active:focus,
 .btn--primary.active:focus,
 .open > .dropdown__toggle.btn--primary:focus {
-  background-color: #336098;
+  background-color: #006093;
   color: #ffffff;
 }
 .btn--primary:active,
@@ -1006,16 +1021,16 @@ fieldset[disabled] .btn--primary:active,
 .btn--primary.disabled.active,
 .btn--primary[disabled].active,
 fieldset[disabled] .btn--primary.active {
-  background-color: #4078BE;
+  background-color: #0081c6;
 }
 .btn--primary .badge {
   background-color: #ffffff;
-  color: #4078BE;
+  color: #0081c6;
 }
 .btn--primary-outline {
   background-color: transparent;
-  border-color: #4078BE;
-  color: #4078BE;
+  border-color: #0081c6;
+  color: #0081c6;
 }
 .btn--primary-outline:hover,
 .btn--primary-outline:focus,
@@ -1023,7 +1038,7 @@ fieldset[disabled] .btn--primary.active {
 .btn--primary-outline:active,
 .btn--primary-outline.active,
 .open > .dropdown__toggle.btn--primary-outline {
-  background-color: #4078BE;
+  background-color: #0081c6;
   color: #ffffff;
 }
 .btn--primary-outline:active,
@@ -1050,8 +1065,8 @@ fieldset[disabled] .btn--primary-outline:active,
 .btn--primary-outline[disabled].active,
 fieldset[disabled] .btn--primary-outline.active {
   background-color: transparent;
-  border-color: #4078BE;
-  color: #4078BE;
+  border-color: #0081c6;
+  color: #0081c6;
 }
 .btn--secondary {
   background-color: #41D6C3;
@@ -1127,7 +1142,7 @@ fieldset[disabled] .btn--secondary.active {
 }
 .btn--link {
   border-radius: 0;
-  color: #4078BE;
+  color: #0081c6;
   font-weight: normal;
 }
 .btn--link,
@@ -1147,7 +1162,7 @@ fieldset[disabled] .btn--link {
 .btn--link:hover,
 .btn--link:focus {
   background-color: transparent;
-  color: #2d5485;
+  color: #004f7a;
   text-decoration: none;
 }
 .btn--link[disabled]:hover,
@@ -1358,27 +1373,25 @@ button.notify__close {
 .dropdown__menu > .active > a,
 .dropdown__menu > .active > a:hover,
 .dropdown__menu > .active > a:focus {
-  background-color: #4078BE;
+  background-color: #0081c6;
   color: #ffffff;
   outline: 0;
   text-decoration: none;
 }
-.dropdown__menu::after,
 .dropdown__menu::before {
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
+  background: inherit;
+  background-clip: border-box;
+  border: inherit;
+  border-bottom: 0;
+  border-right: 0;
   content: "";
-  display: inline-block;
   left: 1.2rem;
   position: absolute;
-}
-.dropdown__menu::after {
-  border-bottom: 1rem solid #FFFFFF;
-  top: -1rem;
-}
-.dropdown__menu::before {
-  border-bottom: 1rem solid rgba(0, 0, 0, 0.2);
-  top: -1.1rem;
+  padding: .6rem;
+  top: -0.7rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: -1;
 }
 .dropdown__menu--right {
   left: auto;
@@ -1393,16 +1406,12 @@ button.notify__close {
   bottom: 100%;
   top: auto;
 }
-.dropdown__menu--top::after {
-  bottom: -1rem;
-  border-bottom: transparent;
-  border-top: 1rem solid #FFFFFF;
-  top: auto;
-}
 .dropdown__menu--top::before {
-  bottom: -1.1rem;
-  border-bottom: transparent;
-  border-top: 1rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: inherit;
+  border-left: 0;
+  border-right: inherit;
+  border-top: 0;
+  bottom: -0.7rem;
   top: auto;
 }
 .dropdown__menu__divider {
@@ -2685,12 +2694,12 @@ a.label:focus {
   background-color: #acacac;
 }
 .label--primary {
-  background-color: #4078BE;
-  border: 1px solid #4078BE;
+  background-color: #0081c6;
+  border: 1px solid #0081c6;
 }
 .label--primary[href]:hover,
 .label--primary[href]:focus {
-  background-color: #336098;
+  background-color: #006093;
 }
 .notify {
   border-radius: 0.4rem;
@@ -2744,7 +2753,7 @@ a.label:focus {
   background: #d2d2d2;
 }
 .progress-bar--primary {
-  background: #4078BE;
+  background: #0081c6;
 }
 .progress-bar--secondary {
   background: #41D6C3;
@@ -3346,7 +3355,7 @@ code {
   margin-top: 0.3rem;
 }
 .site-header__title {
-  color: #4078BE;
+  color: #0081c6;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
