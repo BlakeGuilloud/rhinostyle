@@ -10,8 +10,10 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400"> -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900' rel='stylesheet'>
     <link href="../css/rhinostyle-docs.css" rel="stylesheet" >
+    <script src="../scripts/vendor.bundle.js"></script>
   </head>
   <body>
+
 <nav id="site-navigation" class="site-navigation">
       
     <ul class="site-navigation__nav">
@@ -75,146 +77,18 @@
       <img src="../svg/rhinogram-logo.svg" alt="">
     </div>
   </header>
-  <main class="site-content">
+  <main class="site-content" id="js-app">
     
-  
-<h1 class="site-headline">Buttons</h1>
+  <script src="../scripts/button.js"></script>
 
-<section class="site-section">
-  <h3 class="site-subheadline">Button Tags</h3>
-  <a class="btn btn--default" href="#" role="button">Anchor</a>
-  <button class="btn btn--default" type="submit">Button</button>
-  <input class="btn btn--default" type="button" value="Input">
-  <input class="btn btn--default" type="submit" value="Submit">
-</section>
-
-<section class="site-section">
-  <h3 class="site-subheadline">Button Color Modifiers</h3>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--default">Default</button>
-    <button type="button" class="btn btn--primary">Primary</button>
-    <button type="button" class="btn btn--secondary">Secondary</button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--default-outline">Default Outline</button>
-    <button type="button" class="btn btn--primary-outline">Primary Outline</button>
-  </div>
-  <div>
-    <button type="button" class="btn btn--link">Link</button>
-  </div>
-</section>
-
-<section class="site-section">
-  <h3 class="site-subheadline">Button Size Modifiers</h3>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--lg btn--default">Large</button>
-    <button type="button" class="btn btn--default">Default</button>
-    <button type="button" class="btn btn--sm btn--default">Small</button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--lg btn--default">Large</button>
-    <button type="button" class="btn btn--lg btn--default">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg> Large
-    </button>
-    <button type="button" class="btn btn--lg btn--default btn--icon">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg>
-    </button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--default">Default</button>
-    <button type="button" class="btn btn--default">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg> Default
-    </button>
-    <button type="button" class="btn btn--default btn--icon">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg>
-    </button>
-  </div>
-  <div>
-    <button type="button" class="btn btn--sm btn--default">Small</button>
-    <button type="button" class="btn btn--sm btn--default">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg> Small
-    </button>
-    <button type="button" class="btn btn--sm btn--default btn--icon">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg>
-    </button>
-  </div>
-</section>
-
-<section class="site-section">
-  <h3 class="site-subheadline">Button Type Modifiers</h3>
-  <div class="u-m-b-md">
-    <h5 class="site-miniheadline">Block Buttons</h5>
-    <p class="site-copy">Add the <code>btn--block</code> modifier to create block level button.</p>
-    <div class="row">
-      <div class="col-sm-10">
-        <button type="button" class="btn btn--default btn--block">Block Button</button>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h5 class="site-miniheadline">Icon-Only Buttons</h5>
-    <p class="site-copy">Add the <code>btn--icon</code> modifier when you have a button with an icon but no text. This modifier adjusts the padding to give a more square appearance.</p>
-    <button type="button" class="btn btn--default btn--icon">
-      <svg class="icon"><use xlink:href="#icon-sms"/></svg>
-    </button>
-    <button type="button" class="btn btn--primary btn--icon">
-      <svg class="icon"><use xlink:href="#icon-email"/></svg>
-    </button>
-    <button type="button" class="btn btn--secondary btn--icon">
-      <svg class="icon"><use xlink:href="#icon-cog"/></svg>
-    </button>
-    <button type="button" class="btn btn--default-outline btn--icon">
-      <svg class="icon"><use xlink:href="#icon-clock"/></svg>
-    </button>
-    <button type="button" class="btn btn--primary-outline btn--icon">
-      <svg class="icon"><use xlink:href="#icon-pencil"/></svg>
-    </button>
-  </div>
-</section>
-
-<section class="site-section">
-  <h3 class="site-subheadline">Button States</h3>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--default">Default</button>
-    <button type="button" class="btn btn--default active">Default Active</button>
-    <button type="button" class="btn btn--default disabled">Default Disabled</button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--primary">Primary</button>
-    <button type="button" class="btn btn--primary active">Primary Active</button>
-    <button type="button" class="btn btn--primary disabled">Primary Disabled</button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--secondary">Secondary</button>
-    <button type="button" class="btn btn--secondary active">Secondary Active</button>
-    <button type="button" class="btn btn--secondary disabled">Secondary Disabled</button>
-  </div>
-
-  <div class="u-m-b">
-    <button type="button" class="btn btn--default-outline">Default Outline</button>
-    <button type="button" class="btn btn--default-outline active">Default Outline Active</button>
-    <button type="button" class="btn btn--default-outline disabled">Default Outline Disabled</button>
-  </div>
-  <div class="u-m-b">
-    <button type="button" class="btn btn--primary-outline">Primary Outline</button>
-    <button type="button" class="btn btn--primary-outline active">Primary Outline Active</button>
-    <button type="button" class="btn btn--primary-outline disabled">Primary Outline Disabled</button>
-  </div>
-
-</section>
 
   </main>
 </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="../js/rhinostyle-docs.js"></script>
+    <script src="../scripts/rhinostyle-docs.js"></script>
     <script>
-      
       $(document).ready(function() {
-
-        
-          
         function loop() {
-
           // nav toggling below 1200px
           if(window.matchMedia("(max-width: 1199px)").matches) {
             $('html').removeClass('navigation-is-locked');
@@ -238,14 +112,21 @@
 
         loop();
 
+        // Handle active navigation
+        var split = (document.location.hostname == "localhost") ? 1:2;
+
+        var navLocation = location.pathname.split("/")[split];
+
+        if (navLocation) {
+          $('.site-navigation__nav a[href^="../' + navLocation + '"]').addClass('active');
+        } else {
+          $('.site-navigation__nav a[href=""').addClass('active');
+        }
 
         // SVG loader
-
         boomsvgloader.load('../svg/sprite.svg');
 
-
         // progress bars - send to random position
-
         $('.progress-bar').each(function(){
           var position = Math.floor(Math.random()*100);
           if(position<4) { position = 4; }
@@ -260,7 +141,6 @@
 
 
         // progress bars - click progress bar to transition
-
         $(".progress-bar").on("click", function(e) {
           var offset = $(this).offset(),
               position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
@@ -277,7 +157,6 @@
 
 
         // animation testing
-
         /*var totalFrames = 51,
             speed = 3,
             rhinoEase = new SteppedEase(totalFrames),
@@ -289,21 +168,34 @@
             ease: rhinoEase
         })*/
 
-        var totalFrames = 51, // 52 total frames minus 1
-            speed = 3,
-            rhinoEase = new SteppedEase(totalFrames),
-            finalPosition = '-98.07%'; // total width of svg (39520) minus width of 1 frame (760) * 100
+        var rhinoFlagFrames = 51, // 52 total frames minus 1
+            rhinoFlagEase = new SteppedEase(rhinoFlagFrames),
+            rhiniFlagPosition = '-98.07%', // total width of svg (39520) minus width of 1 frame (760px) / 39520 * 100
+            rhinoFlagSpeed = 3,
 
-        var rhinoTL = new TimelineMax({repeat:-1,repeatDelay:2});
-        rhinoTL.to('.rhino-animation__image', speed, {
-          x: finalPosition,
-          ease: rhinoEase,
-          roundProps: 'x' // not working
+            rhinoLoginFrames = 64, // 65 total frames minus 1
+            rhinoLoginEase = new SteppedEase(rhinoLoginFrames),
+            rhinoLoginPosition = '-98.46%', // total width of svg (37700) minus width of 1 frame (580px) / 37700 * 100
+            rhinoLoginSpeed = 3;
+            
+            
+            
+            
+
+        var rhinoFlagTL = new TimelineMax({repeat:-1,repeatDelay:2});
+        rhinoFlagTL.to('.rhino-animation__flag', rhinoFlagSpeed, {
+          x: rhiniFlagPosition,
+          ease: rhinoFlagEase
+        });
+
+        var rhinoLoginTL = new TimelineMax({repeat:-1,repeatDelay:2});
+        rhinoLoginTL.to('.rhino-animation__login', rhinoLoginSpeed, {
+          x: rhinoLoginPosition,
+          ease: rhinoLoginEase
         });
 
 
         // Handle active navigation
-
         var split = (document.location.hostname == "localhost") ? 1:2;
 
         var navLocation = location.pathname.split("/")[split];
@@ -313,10 +205,9 @@
         } else {
           $('.site-navigation__nav a[href=""').addClass('active');
         }
-
-
       });
     </script>
   </body>
   </html>
+
 

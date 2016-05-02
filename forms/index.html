@@ -10,8 +10,10 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400"> -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,900' rel='stylesheet'>
     <link href="../css/rhinostyle-docs.css" rel="stylesheet" >
+    <script src="../scripts/vendor.bundle.js"></script>
   </head>
   <body>
+
 <nav id="site-navigation" class="site-navigation">
       
     <ul class="site-navigation__nav">
@@ -75,7 +77,7 @@
       <img src="../svg/rhinogram-logo.svg" alt="">
     </div>
   </header>
-  <main class="site-content">
+  <main class="site-content" id="js-app">
     
   
 <!-- 
@@ -107,7 +109,7 @@ check/radio modifiers
         </div>
 
         <div class="form__group">
-          <label for="" class="block">Select</label>
+          <label for="">Select</label>
           <div class="rhinoselect">
             <select class="form__control" id="exampleSelect2">
               <option value="" selected="">Option One</option>
@@ -119,7 +121,7 @@ check/radio modifiers
         </div>
 
         <div class="form__group">
-          <label for="" class="block">Checkboxes</label>
+          <label for="" class="u-block">Checkboxes</label>
           <div class="rhinobox rhinobox--inline">
             <input type="checkbox" id="exampleCheckbox1" checked>
             <label for="exampleCheckbox1">Checkbox One</label>
@@ -135,7 +137,7 @@ check/radio modifiers
         </div>
 
         <div class="form__group">
-          <label for="" class="block">Radios</label>
+          <label for="" class="u-block">Radios</label>
           <div class="rhinodio rhinodio--inline">
             <input type="radio" name="exampleRadio" id="exampleRadio1">
             <label for="exampleRadio1">Radio One</label>
@@ -151,7 +153,7 @@ check/radio modifiers
         </div>
 
         <div class="form__group">
-          <label for="" class="block">Switcher</label>
+          <label for="" class="u-block">Switcher</label>
           <div class="rhinoswitcher">
             <input type="checkbox" checked class="rhinoswitcher__input" id="exampleSwitcher1">
             <label class="rhinoswitcher__label" for="exampleSwitcher1">
@@ -392,15 +394,10 @@ check/radio modifiers
   </main>
 </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="../js/rhinostyle-docs.js"></script>
+    <script src="../scripts/rhinostyle-docs.js"></script>
     <script>
-      
       $(document).ready(function() {
-
-        
-          
         function loop() {
-
           // nav toggling below 1200px
           if(window.matchMedia("(max-width: 1199px)").matches) {
             $('html').removeClass('navigation-is-locked');
@@ -424,14 +421,21 @@ check/radio modifiers
 
         loop();
 
+        // Handle active navigation
+        var split = (document.location.hostname == "localhost") ? 1:2;
+
+        var navLocation = location.pathname.split("/")[split];
+
+        if (navLocation) {
+          $('.site-navigation__nav a[href^="../' + navLocation + '"]').addClass('active');
+        } else {
+          $('.site-navigation__nav a[href=""').addClass('active');
+        }
 
         // SVG loader
-
         boomsvgloader.load('../svg/sprite.svg');
 
-
         // progress bars - send to random position
-
         $('.progress-bar').each(function(){
           var position = Math.floor(Math.random()*100);
           if(position<4) { position = 4; }
@@ -446,7 +450,6 @@ check/radio modifiers
 
 
         // progress bars - click progress bar to transition
-
         $(".progress-bar").on("click", function(e) {
           var offset = $(this).offset(),
               position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
@@ -463,7 +466,6 @@ check/radio modifiers
 
 
         // animation testing
-
         /*var totalFrames = 51,
             speed = 3,
             rhinoEase = new SteppedEase(totalFrames),
@@ -475,21 +477,34 @@ check/radio modifiers
             ease: rhinoEase
         })*/
 
-        var totalFrames = 51, // 52 total frames minus 1
-            speed = 3,
-            rhinoEase = new SteppedEase(totalFrames),
-            finalPosition = '-98.07%'; // total width of svg (39520) minus width of 1 frame (760) * 100
+        var rhinoFlagFrames = 51, // 52 total frames minus 1
+            rhinoFlagEase = new SteppedEase(rhinoFlagFrames),
+            rhiniFlagPosition = '-98.07%', // total width of svg (39520) minus width of 1 frame (760px) / 39520 * 100
+            rhinoFlagSpeed = 3,
 
-        var rhinoTL = new TimelineMax({repeat:-1,repeatDelay:2});
-        rhinoTL.to('.rhino-animation__image', speed, {
-          x: finalPosition,
-          ease: rhinoEase,
-          roundProps: 'x' // not working
+            rhinoLoginFrames = 64, // 65 total frames minus 1
+            rhinoLoginEase = new SteppedEase(rhinoLoginFrames),
+            rhinoLoginPosition = '-98.46%', // total width of svg (37700) minus width of 1 frame (580px) / 37700 * 100
+            rhinoLoginSpeed = 3;
+            
+            
+            
+            
+
+        var rhinoFlagTL = new TimelineMax({repeat:-1,repeatDelay:2});
+        rhinoFlagTL.to('.rhino-animation__flag', rhinoFlagSpeed, {
+          x: rhiniFlagPosition,
+          ease: rhinoFlagEase
+        });
+
+        var rhinoLoginTL = new TimelineMax({repeat:-1,repeatDelay:2});
+        rhinoLoginTL.to('.rhino-animation__login', rhinoLoginSpeed, {
+          x: rhinoLoginPosition,
+          ease: rhinoLoginEase
         });
 
 
         // Handle active navigation
-
         var split = (document.location.hostname == "localhost") ? 1:2;
 
         var navLocation = location.pathname.split("/")[split];
@@ -499,10 +514,9 @@ check/radio modifiers
         } else {
           $('.site-navigation__nav a[href=""').addClass('active');
         }
-
-
       });
     </script>
   </body>
   </html>
+
 
