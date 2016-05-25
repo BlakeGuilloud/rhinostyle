@@ -36,6 +36,39 @@ webpackJsonp([1],{
 	      'div',
 	      null,
 	      _react2.default.createElement(
+	        'h1',
+	        { className: 'site-headline' },
+	        'Progress Bars ',
+	        _react2.default.createElement(
+	          'small',
+	          null,
+	          '(pssst! click on progress bars!)'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'section',
+	        { className: 'site-section' },
+	        _react2.default.createElement(
+	          'h3',
+	          { className: 'site-subheadline' },
+	          'Progress Bar Types'
+	        ),
+	        _react2.default.createElement(_components.ProgressBar, { progress: 20, classes: 'u-m-b' }),
+	        _react2.default.createElement(_components.ProgressBar, { progress: 40, type: 'primary', classes: 'u-m-b' }),
+	        _react2.default.createElement(_components.ProgressBar, { progress: 60, type: 'secondary', classes: 'u-m-b' }),
+	        _react2.default.createElement(_components.ProgressBar, { progress: 80, type: 'temperature', classes: 'u-m-b' })
+	      ),
+	      _react2.default.createElement(
+	        'section',
+	        { className: 'site-section' },
+	        _react2.default.createElement(
+	          'h3',
+	          { className: 'site-subheadline' },
+	          'Progress Bar Labels'
+	        ),
+	        _react2.default.createElement(_components.ProgressBar, { progress: 60, showLabel: true, type: 'primary' })
+	      ),
+	      _react2.default.createElement(
 	        'section',
 	        null,
 	        _react2.default.createElement(
