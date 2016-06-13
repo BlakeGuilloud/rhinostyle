@@ -992,6 +992,7 @@ a.u-text-warning:hover,
   font-weight: normal;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  line-height: 1;
   margin-bottom: 0;
   max-width: 100%;
   text-align: left;
@@ -2892,26 +2893,23 @@ fieldset[disabled] .rhinodio label {
   padding: 1rem;
   position: relative;
   vertical-align: middle;
-  z-index: 0;
 }
 .msg:empty {
   display: none;
 }
 .msg a {
   color: inherit;
-  font-weight: 300;
   opacity: 0.85;
+  text-decoration: underline;
 }
 .msg a:hover {
   opacity: 1;
 }
 .msg--default {
   background: #fff;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .msg--note {
   background: #fefbd0;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .msg--primary {
   background: #0081c6;
@@ -2923,19 +2921,34 @@ fieldset[disabled] .rhinodio label {
   box-shadow: 0 2px 2px #25ab99;
   color: #fff;
 }
-.msg--to::after {
+.msg--from::before,
+.msg--to::before {
   background: inherit;
   background-clip: border-box;
   border: inherit;
   border-bottom: 0;
   border-right: 0;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.25);
   content: '';
-  left: -0.4rem;
   padding: .6rem;
   position: absolute;
   top: 1.2rem;
+}
+.msg--from.msg--primary::before,
+.msg--to.msg--primary::before {
+  box-shadow: 0 2px 2px -2px #00456a;
+}
+.msg--from.msg--secondary::before,
+.msg--to.msg--secondary::before {
+  box-shadow: 0 2px 2px -2px #209283;
+}
+.msg--from::before {
+  right: -0.5rem;
+  transform: rotate(-45deg);
+}
+.msg--to::before {
+  left: -0.5rem;
   transform: rotate(45deg);
-  z-index: -1;
 }
 .modal-open {
   overflow: hidden;
@@ -3652,6 +3665,9 @@ html.navigation-is-locked .site-wrapper {
     margin-left: 24rem;
     transform: translateX(0) !important;
   }
+}
+.playgroundPreview {
+  padding-top: 1.2rem;
 }
 .cm-s-monokai.CodeMirror {
   margin-bottom: 1.5rem;
