@@ -1,4 +1,4 @@
-/*! rhinostyle v0.2.0 */
+/*! rhinostyle v0.2.1 */
 /*! normalize.css v3..3 | MIT License | github.com/necolas/normalize.css */
 html {
   -ms-text-size-adjust: 100%;
@@ -3205,6 +3205,10 @@ input[type='checkbox']:focus {
   font-size: 1.6rem;
   height: 3.6rem;
   padding: 0 1rem;
+}
+.form__addon__item.disabled,
+.form__addon__item[disabled] {
+  opacity: 0.6;
 }
 .form__addon__item--left {
   border-bottom-left-radius: 0.4rem;
