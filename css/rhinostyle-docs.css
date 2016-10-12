@@ -3264,6 +3264,7 @@ fieldset[disabled] .form__control {
 }
 textarea.form__control {
   height: auto;
+  min-height: 3.6rem;
   padding-bottom: 0.6rem;
   padding-top: 0.6rem;
 }
