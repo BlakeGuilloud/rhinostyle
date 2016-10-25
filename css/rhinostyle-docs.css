@@ -1,4 +1,4 @@
-/*! rhinostyle v0.2.3 */
+/*! rhinostyle v0.2.4 */
 /*! normalize.css v3..3 | MIT License | github.com/necolas/normalize.css */
 html {
   -ms-text-size-adjust: 100%;
@@ -3169,7 +3169,6 @@ input[type='checkbox']:focus {
 .form__addon .form__control {
   -ms-flex: 1;
   flex: 1 1 0%;
-  width: auto;
 }
 .form__addon .form__control:first-child {
   border-bottom-right-radius: 0;
